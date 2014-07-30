@@ -1,0 +1,38 @@
+  <%= form_for @card, html: { multipart: true } do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% @card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= image_tag(@card.picture_url) if @card.picture? %>
+    <%= f.file_field :picture %>
+  </p>
+  
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :shortdesc %><br>
+    <%= f.text_field :shortdesc %>
+  </div>
+  <div class="field">
+    <%= f.label :long_desc %><br>
+    <%= f.text_area :long_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :readiness_level %><br>
+    <%= f.text_field :readiness_level %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

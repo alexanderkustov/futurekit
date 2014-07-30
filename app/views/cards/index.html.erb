@@ -1,0 +1,34 @@
+<h1>Listing cards</h1>
+
+<table>
+  <thead>
+    <tr>
+    <th>photo</th>
+      <th>Name</th>
+      <th>Shortdesc</th>
+      <th>Long desc</th>
+      <th>Readiness level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+      <td>    <%= image_tag(card.picture_url) if card.picture? %>
+</td>
+        <td><%= card.name %></td>
+        <td><%= card.shortdesc %></td>
+        <td><%= card.long_desc %></td>
+        <td><%= card.readiness_level %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card', new_card_path %>

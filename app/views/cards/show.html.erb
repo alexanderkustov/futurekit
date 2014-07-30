@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @card.name %>
+</p>
+
+<%= image_tag(@card.picture_url) if @card.picture? %>
+
+<%= @card.picture_url.to_s %>
+
+<p>
+  <strong>Shortdesc:</strong>
+  <%= @card.shortdesc %>
+</p>
+
+<p>
+  <strong>Long desc:</strong>
+  <%= @card.long_desc %>
+</p>
+
+<p>
+  <strong>Readiness level:</strong>
+  <%= @card.readiness_level %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
