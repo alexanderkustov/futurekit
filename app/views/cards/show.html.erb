@@ -1,8 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
-
 <p>
   <strong>Name:</strong>
   <%= @card.name %>
@@ -10,7 +7,12 @@
 
 <%= image_tag(@card.picture_url) if @card.picture? %>
 
-<%= @card.picture_url.to_s %>
+
+<p>
+  <strong>Category:</strong>
+
+ <%= @card.category %>
+</p>
 
 <p>
   <strong>Shortdesc:</strong>
@@ -26,6 +28,3 @@
   <strong>Readiness level:</strong>
   <%= @card.readiness_level %>
 </p>
-
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>

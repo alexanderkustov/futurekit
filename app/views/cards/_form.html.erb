@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div>
+  
+</div>
+
   <p>
     <%= image_tag(@card.picture_url) if @card.picture? %>
     <%= f.file_field :picture %>
@@ -20,6 +24,13 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+   <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+
+  
   <div class="field">
     <%= f.label :shortdesc %><br>
     <%= f.text_field :shortdesc %>
@@ -29,8 +40,8 @@
     <%= f.text_area :long_desc %>
   </div>
   <div class="field">
-    <%= f.label :readiness_level %><br>
-    <%= f.text_field :readiness_level %>
+    <input type="range" name="readiness_level" min="0" max="1" step="0.5">
+
   </div>
   <div class="actions">
     <%= f.submit %>

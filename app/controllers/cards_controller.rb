@@ -10,11 +10,15 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.json
   def show
+
   end
 
   # GET /cards/new
   def new
     @card = Card.new
+
+    link = @card.links.build
+  
   end
 
   # GET /cards/1/edit
@@ -70,6 +74,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:name, :shortdesc, :long_desc, :readiness_level, :picture)
+      params.require(:card).permit(:name, :shortdesc, :long_desc, :category, :readiness_level, :picture)
     end
 end

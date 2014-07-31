@@ -17,6 +17,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'rmagick'
 gem 'carrierwave'
 
+
+gem 'paper_trail', '~> 3.0.3'
+
+gem 'globalize', '~> 4.0.2'
+
+
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

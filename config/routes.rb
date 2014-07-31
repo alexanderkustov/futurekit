@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :categories
-
   resources :cards do
       resources :links
   end
